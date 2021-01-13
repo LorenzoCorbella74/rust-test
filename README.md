@@ -15,6 +15,7 @@ Nel seguito una sunto della sintassi del linguaggio di programmazione [RUST](htt
     + [Enums](doc/enum.md)
     + [Tuples & Struct](doc/tuples_struct.md)
 + [Match](doc/match.md)
++ [Option & Result](doc/enum_builtin.md)
 + [Funzioni e moduli](doc/function.md)
 + [Conditionals and operator](doc/conditional.md)
 + [Loops](doc/loop.md)

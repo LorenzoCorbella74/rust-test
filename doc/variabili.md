@@ -10,7 +10,7 @@ Le variabili sono dichiarate usando la keyword  *let*. Quando si assegna un valo
 
 E' possibile assegnare un nome di variabile più volte: questo è detto *variable shadowing* e permette di cambiare il tipo della variabile più volte.
 
-I nomi devono essere sempre in ___snake_case___.
+I nomi devono essere sempre in ___snake_case___ come da [convenzione](https://rust-lang.github.io/api-guidelines/naming.html).
 
 Le variabili possono tenere sia "primitive data" che "references to data".
 

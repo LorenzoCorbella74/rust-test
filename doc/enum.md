@@ -61,13 +61,3 @@ fn main() {
 }
 ```
 
-Null non esiste mentre il tuple vuoto () rappresenta l'assenza di data (come l'undefined in javascript)
-
-```rust
-fn prints_but_returns_nothing(data: &str) -> () {
-    println!("passed string: {}", data);
-}
-```
-
-
-Il costrutto *match* permette di ...

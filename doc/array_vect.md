@@ -77,3 +77,8 @@ pub fn run() {
 
   println!("Numbers Vec: {:?}", numbers);
 }
+
+```
+NB: 
++ Vec ha il metodo *iter()* che crea un iteratore da un vettore permettendo di mettere il vettore dentro un for loop.
++ La macro vec! permette di creare un vettore velocemente invece di invocare la costruzione con `let mut i32_vec = Vec::<i32>::new();` 
