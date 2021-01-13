@@ -1,8 +1,8 @@
 [back](../README.md)
 
-## Variabili
+# Variabili
 
-Rust è un linguaggio block-scoped dove cioè la visibilità delle variabili è contenuta dentro un blocco di codice identificato da *{ }*.
+Rust è un linguaggio block-scoped dove cioè la visibilità delle variabili è contenuta dentro un blocco di codice identificato da *{ }*; alla fine del blocco la risorsa è rilasciata (drop).
 
  
 
@@ -20,9 +20,6 @@ Le variabili possono essere:
 
 ### Constants
 A differenza delle variabili, le costanti devono sempre avere tipi espliciti. I nomi delle costanti sono sempre presenti in SCREAMING_SNAKE_CASE.
-
-
-
 
 ```rust
 pub fn run() {
@@ -47,30 +44,3 @@ pub fn run() {
 }
 ```
 
-# Ownership  & Borrowing
-Poiché Rust non effettua il garbage-collect e i programmatori non devono allocare e rilasciare manualmente la memoria, la memoria viene gestita tramite un sistema di proprietà (ownership). Tre sono le regole del'ownership:
-- Una volta che assegno un valore ad una variabile, tale variabile "possiede" il valore fintanto che il blocco non finisce.  
-- Ci può essere solo un "owner" alla volta
-- quando l'owner va out of scope (il blocco che lo include termina) il valore viene rilasciato.
-
-Poiché può esserci un solo proprietario alla volta, non posso provare ad assegnare il valore di una variabile a un altro utilizzando il nome della prima variabile se è stata allocata nell'heap. Se il tipo della variabile è primitivo (int, double, bool, ecc.), La riassegnazione copierà semplicemente il valore e NON cambierà la proprietà. 
-
-
-## Borrowing
-Per puntare ad una risorsa si usa dei "Reference Pointers" cioè dei riferimenti a specifiche risorse in memoria. I riferimenti permettono di prendere ___il valore senza prendere la proprietà___. Ci può essere ___un infinito numero di riferimenti non mutabili ad una variabile ad un certo momento, oppure, un unico riferimento mutabile___.
-
-```rust
-pub fn run() {
-  // Primitive Array
-  let arr1 = [1, 2, 3];
-  let arr2 = arr1;
-
-  // With non-primitives, if you assign another variable to a piece of data, the first variable will no longer hold that value. You'll need to use a reference (&) to point to the resource
-
-  // Vector
-  let vec1 = vec![1, 2, 3];
-  let vec2 = &vec1;
-
-  println!("Values: {:?}", (&vec1, vec2));
-}
-```

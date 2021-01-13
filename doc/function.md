@@ -48,36 +48,3 @@ let add_nums = |n1: i32, n2: i32| n1 + n2 + n3;
 println!("C Sum: {}", add_nums(3, 3));
 ```
 
-# Moduli
-E' possibile frazionare il codice tramite l'utilizzo dei moduli. 
-
-Ad esempio un file *prova.rs* può contenere varie funzioni che possono essere esposte all'esterno tramite la keyword *pub*. Il modulo è poi importato secondo la seguente sintassi:
-
-```rust
-
-```rust
-// nel file prova.rs
-pub fn run() {
-  greeting("Hello", "Jane");
-}
-
-// si importa il contenuto del file prova.rs
-mod prova;
-
-fn main(){
-    // si utilizza tramite la notazione >namespace>::<nome_fn>
-    prova::run();
-}
-```
-
-
-fn main() {
-   greetings::hello();
-}
-
-mod greetings {
-  // ⭐️ By default, everything inside a module is private
-  pub fn hello() { // ⭐️ So function has to be public to access from outside
-    println!("Hello, world!");
-  }
-}

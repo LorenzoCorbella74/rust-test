@@ -1,14 +1,11 @@
-# My Notes on RUST
-Nel seguito una sunto della sintassi del linguaggio di programmazione [RUST](https://www.rust-lang.org/it/)
-
+# My Notes on [RUST](https://www.rust-lang.org/it/)
 “Rust is a systems programming language focused on three goals: safety, speed, and concurrency.”
-
-
 
 ## Index
 + [Installation and cargo](doc/install.md)
 + [Main, print and comments](doc/print.md)
 + [Variabili](doc/variabili.md)
++ [Ownership & borrowing](doc/ownership.md)
 + [Tipi](doc/types.md)
     + [Stringhe](doc/strings.md)
     + [Array and Vector](doc/array_vect.md)
@@ -19,11 +16,9 @@ Nel seguito una sunto della sintassi del linguaggio di programmazione [RUST](htt
 + [Funzioni e moduli](doc/function.md)
 + [Conditionals and operator](doc/conditional.md)
 + [Loops](doc/loop.md)
++ [Moduli](doc/modules.md)
 + [rustdoc](doc/rustdoc.md)
 + [Standard Library](doc/standard.md)
-
-Examples
-+ 
 
 
 ## Links
