@@ -1,7 +1,7 @@
 [back](../README.md)
 
 # Moduli
-E' possibile frazionare il codice tramite l'utilizzo dei moduli. Ad esempio un file *prova.rs* può contenere varie elementi (funzioni, struct, ) che possono essere esposti all'esterno tramite la keyword *pub*. Di default i membri di un cratenon sono accessibili dall'esterno!. Il modulo è poi importato secondo la seguente sintassi:
+E' possibile frazionare il codice tramite l'utilizzo dei moduli. Ad esempio un file *prova.rs* può contenere varie elementi (funzioni, struct, ) che possono essere esposti all'esterno tramite la keyword *pub*. Di default i membri di un crate non sono accessibili dall'esterno!. Il modulo è poi importato secondo la seguente sintassi:
 
 ```rust
 // nel file prova.rs
@@ -43,6 +43,10 @@ Ogni modulo può tenere variabili globali, funzioni, structs, traits e altri mod
 
 Referencing Other Modules and Crates
 Items nei modules possono essere referenziati tramite il loro percorso di modulo completo std::f64::consts::PI o, in una maniera più semplice tramite la keyword *use* che permette di specificare particolari item dai moduli senza mettere il path completo.
+
+Un *crate* è una unità di compilatione in Rust. Quando rustc some_file.rs è chiamato, some_file.rs è trattato come un file crate. Se dentro some_file.rs ci stanno dichiarazioni di mod, allora il contenuto dei file dei moduli saranno inseriti al posto delle dichiarazioni dei moduli, prima di far girare il compilatore. In altre parole, i moduli non vengono compilati individualmente,ma soltanto i crates sono compilati.
+
+Un crate può essere compilato in un file binario o in una libreria. Di default, rustc produrrà un binario da un crate a meno che non si passi il flag *--crate-type=lib* producendo un file *.rlib*.
 
 ```rust
 use std::f64::consts::PI;

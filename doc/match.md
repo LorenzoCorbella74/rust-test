@@ -2,7 +2,7 @@
 
 # Match
 
-Al posto dello switch statement Rust ha il match, utilizzato con numeri e per  pattern matching di dati più complessi. L'abbinamento combinato con la destrutturazione è di gran lunga uno dei modelli più comuni utilizzati in Rust.
+Al posto dello switch statement Rust ha il match, utilizzato con numeri e per pattern matching di dati più complessi. L'abbinamento combinato con la destrutturazione è di gran lunga uno dei modelli più comuni utilizzati in Rust.
 
 ```rust
 

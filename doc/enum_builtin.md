@@ -1,12 +1,36 @@
 [back](../README.md)
-# "BUILT-IN" Enum
 
+# Error Handling
+
+Con Error handling si intende il processo di gestione della possibilità che qualcosa vada storto. Rust richiede che tale pratica sia esplicita. 
+
+In generale:
++ avere un *panic* esplicito è utile per i test e per la gestione di errori irrisolvibili.
++ Il tipo *Option* è quando un valore è opzionale o quando la mancanza di un valore non è una condizione di errore. Per le *Options*, il metodo *unwrap* è utile per prototipazzione e casi quando è assolutamente certo che ci sia un valore anche se la funzione *expect* è più utile in quanto permette di specificare un messaggio di errore nel caso le cose vadano storte.
++ Quando c'è la possibilità che le cose possano andar male ed il chiamante deve gestire il problema si deve usare *Result*. Anche per result si può usare *unwrap* e *expect* (anche se è meglio lasciarli per prototipazione).
+
+## Panic
+Il meccanismo più semplice di gestione dell'errore è detto *panic*. Stampa un messaggio di errore, e fa uscire il programma:
+```rust
+fn drink(beverage: &str) {
+    // You shouldn't drink too much sugary beverages.
+    if beverage == "lemonade" { panic!("AAAaaaaa!!!!"); }
+    println!("Some refreshing {} is all I need.", beverage);
+}
+
+fn main() {
+    drink("water");
+    drink("lemonade");
+}
+```
+
+# "BUILT-IN" Enum
 Rust ha due generic enum "built in" molto importanti: 
 + Option che permette di rappresentare dei ___valori nulli senza usare null___
 + Result che permette di ritornare un valore __che ha la possibilità di fallire__
 
 ## Option
-Questo è molto comune nel codice, istanze di tale enum possono essere create dovunque con i due enum variants *Some* e *None*
+Option è usato quando l'assenza è una possibilità. Questo è molto comune nel codice, istanze di tale enum possono essere create dovunque con i due enum variants *Some(T)* quando un elemento di tipo T è trovato e *None* quando non è trovato nessun elemento. 
 ```rust
 enum Option<T> {
   None,
@@ -49,7 +73,7 @@ fn main() {
 }
 ```
 ## Result
-Result è il modo idiomatico con cui il linguaggio effettua la gestione degli errori. Notare che il tipo generico ha molti tipi parametrizzati separati da virgola .
+Result è il modo idiomatico con cui il linguaggio effettua la gestione degli errori.
 
 ```rust
 enum Result<T, E> {

@@ -28,11 +28,11 @@ fn main() {
     println!("{} {}", a, b);
 }
 ```
-E' possibile specificare i valori di ritorno con il simbolo *->* e se si restituisce un valore nell'ultima riga della funzione, non è necessario includere la keyword *return*-
+E' possibile specificare i valori di ritorno con il simbolo *->* e se si restituisce un valore nell'ultima riga della funzione, non è necessario includere la keyword *return* e il *;* finale.
 
 
 ## Closure
-Si indica per closure ciò che in javascript sono le arrow function. Al posto di *()=> ()* si ha *| | ()*.
+Si indica per closure funzioi capaci di catturare il contesto esterno con una sintassi che ricorda le arrow function di javascript. Al posto di *()=> ()* si ha *| | ()*.
 
 ```rust
 // al posto di
@@ -46,5 +46,10 @@ let n3: i32 = 10;
 let add_nums = |n1: i32, n2: i32| n1 + n2 + n3;
 
 println!("C Sum: {}", add_nums(3, 3));
+
+// A closure taking no arguments which returns an `i32`.
+// The return type is inferred.
+let one = || 1;
+println!("closure returning one: {}", one());
 ```
 
