@@ -23,6 +23,9 @@
 
 
 ## Links
+
+### News
++ [Readrust](https://readrust.net/)
 ### Tutorials
 + [Impara rust](https://www.rust-lang.org/it/learn)
 + [The rust programming language](https://doc.rust-lang.org/stable/book/)

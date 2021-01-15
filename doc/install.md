@@ -70,12 +70,13 @@ version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
 edition = "2018"
 [dependencies]
-rand = "0.3.14" // scarica l'ultima versione compatibile con la 0.3.14
+rand = "0.3.14" # scarica l'ultima versione compatibile con la 0.3.14
 ```
 
 Quando Cargo builda per la prima volta un progetto produce un file *Cargo.lock* su cui vengono scritte le versioni delle dipendenze. Se queste in futuro vengono aggiornate si dovrà fare manualmente un *cargo update* o scrivere sul cargo.toml la versione major richiesta.
 
 ## Links
++ [Rustc book](https://doc.rust-lang.org/rustc/index.html)
 + [Cargo book](https://doc.rust-lang.org/cargo/index.html)
 + [Lista crates](https://lib.rs/)
 
